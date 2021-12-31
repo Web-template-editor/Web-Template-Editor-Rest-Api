@@ -29,7 +29,7 @@ public class Project {
 	
 	
 	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "member_id")
+	@JoinColumn(name = "member_id" ,unique = true)
 	private Member member;
 
 

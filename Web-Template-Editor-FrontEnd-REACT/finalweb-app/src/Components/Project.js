@@ -2,7 +2,7 @@ import React, {Component} from "react";
 class Project extends Component{
     render(){
         return(
-            <div>this is project</div>
+            <div>this is first Project</div>
         )
     }
 }

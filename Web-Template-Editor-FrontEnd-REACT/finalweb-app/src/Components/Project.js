@@ -1,8 +1,12 @@
 import React from "react";
 import './components.css';
+import Details from "./Details";
 function Project (){
 
         return(
+        
+            <div>
+
             <div class='project'>
             <br/><br/>
             <h1>PROJECT 1</h1><br/>
@@ -11,11 +15,12 @@ function Project (){
 What’s more is that when you start developing React projects, you learn which tools and React ecosystem to use for which React project. The biggest advantage of building apps with React is that once you’ve successfully deployed them, you can incorporate them into your portfolio to impress potential employers.
 
 However, the most tricky part of the process is figuring out what React apps you should build. To help you break the ice with React project development, we’ve compiled a list of React projects for beginners.  </p>
-           
+</div>
 
+    <Details/>
             </div>
-         
         )
+        
     }
 
 export default Project;

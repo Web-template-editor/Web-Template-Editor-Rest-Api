@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {BrowserRouter as Router,
@@ -8,10 +8,11 @@ import Header from './Components/Header';
 import Project from './Components/Project';
 import Details from './Components/Details';
 import Home from './Components/Home';
+import './Components/components.css';
 
-class App extends Component{
+function App(){
 
-  render(){
+  
     return(
       <div className='container'>
       <Router>
@@ -28,5 +29,5 @@ class App extends Component{
       </div>
     )
   }
-}
+
 export default App;

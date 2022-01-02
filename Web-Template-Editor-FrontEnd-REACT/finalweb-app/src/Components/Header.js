@@ -1,9 +1,9 @@
-import React,{Component} from "react";
+import React from "react";
 import {Navbar,Nav,NavDropdown}from 'react-bootstrap';
 
 
-class Header extends Component{
-     render(){
+function Header(){
+    
         return(
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
@@ -11,7 +11,7 @@ class Header extends Component{
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="/Details">Contact</Nav.Link>
+      <Nav.Link href="/Details">DETAILS</Nav.Link>
       
       <NavDropdown title="PROJECT 2020-2022" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/Project">team -1</NavDropdown.Item>
@@ -20,7 +20,7 @@ class Header extends Component{
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="/Guids">More INfo</Nav.Link>
+      <Nav.Link href="/Guids">MORE INFO</Nav.Link>
      
     </Nav>
   </Navbar.Collapse>
@@ -29,5 +29,5 @@ class Header extends Component{
 
         )
     }
-}
+
 export default Header;

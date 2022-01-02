@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import './components.css';
-class Project extends Component{
-    render(){
+function Project (){
+
         return(
             <div class='project'>
             <br/><br/>
@@ -17,5 +17,5 @@ However, the most tricky part of the process is figuring out what React apps you
          
         )
     }
-}
+
 export default Project;

@@ -8,6 +8,8 @@ import Project from './Components/Project';
 import Details from './Components/Details';
 import Home from './Components/Home';
 import './Components/components.css';
+import Media from './Components/Media';
+
 
 function App(){
 
@@ -21,6 +23,9 @@ function App(){
         
           <Route path='/project'><Project/></Route>
           <Route path='/Details'><Details/></Route>
+          <Route path='/Media'><Media/></Route>
+
+
        
         </Switch>
       </Router>

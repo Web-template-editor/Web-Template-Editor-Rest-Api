@@ -3,10 +3,11 @@ import {Navbar,Nav,NavDropdown}from 'react-bootstrap';
 import axios from "axios";
 
 function Header(){
+  
   const[project,setProject]=useState([])
-  //const[ide,setIde]=useState('')
 
   useEffect(()=>{axios.get('http://localhost:8080/projects/project').then((response)=>{
+    console.log(response.data)
     setProject(response.data)
   })},[])
 
@@ -22,10 +23,9 @@ function Header(){
       <NavDropdown title="PROJECT 2020-2022" id="collasible-nav-dropdown">
         
         {
-          project.map((obj,index)=>{
+          project.map((obj)=>{
             return(
-              
-              <NavDropdown.Item key={index} href={"/project/"+obj.projectName}>{obj.projectName}</NavDropdown.Item>
+              <NavDropdown.Item href="/Project">{obj.projectName}</NavDropdown.Item>
 
             )
 

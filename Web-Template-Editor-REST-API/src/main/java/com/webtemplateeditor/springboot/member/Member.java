@@ -2,14 +2,15 @@ package com.webtemplateeditor.springboot.member;
 
 
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
-
-
+import com.webtemplateeditor.springboot.relationship.Relationship;
 
 
 @Entity
@@ -99,6 +100,10 @@ public class Member {
 	}
 	
 
+	@OneToMany(mappedBy = "member")
+	Set<Relationship> relationship;
+	
+	
 
 
 	

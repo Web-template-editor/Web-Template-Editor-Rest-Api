@@ -22,6 +22,18 @@ class Project_MemberKey implements Serializable {
 
     @Column(name = "member_id")
     Long memberId;
+    
+    
+    
+
+	public Project_MemberKey() {
+	}
+
+	public Project_MemberKey(String projectName, Long memberId) {
+		super();
+		this.projectName = projectName;
+		this.memberId = memberId;
+	}
 
 	public String getProjectName() {
 		return projectName;
@@ -53,10 +65,23 @@ public class Relationship {
 	    @JoinColumn(name = "project_name")
 	    Project project;
 	
-	    @ManyToOne
+	   @ManyToOne
 	    @MapsId("memberId")
 	    @JoinColumn(name = "member_id",unique = true)
 	    Member member;
+	   
+	   
+	   
+
+		public Relationship() {
+	}
+
+		public Relationship(Project_MemberKey id, Project project, Member member) {
+		super();
+		this.id = id;
+		this.project = project;
+		this.member = member;
+	}
 
 		public Project_MemberKey getId() {
 			return id;

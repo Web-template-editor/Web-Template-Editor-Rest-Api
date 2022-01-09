@@ -21,7 +21,7 @@ function Project (props){
             <p>{project.projectDescription} </p>
 </div>
 
-    <Details />
+    <Details/>
             </div>
         )
         

@@ -1,17 +1,17 @@
 package com.webtemplateeditor.springboot.project;
 
 
-import javax.persistence.CascadeType;
+import java.util.Set;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.webtemplateeditor.springboot.member.Member;
+import com.webtemplateeditor.springboot.relationship.Relationship;
 
 
 
@@ -20,19 +20,12 @@ import com.webtemplateeditor.springboot.member.Member;
 public class Project {
 	
 	@Id
+	@Column(name = "project_name")
 	private String projectName;
-	
-
 	
 	@Column(name = "project_description")
 	private String projectDescription;
 	
-	
-	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "member_id" ,unique = true)
-	private Member member;
-
-
 
 	public Project() {
 
@@ -42,7 +35,6 @@ public class Project {
 	public Project(String projectDescription, Member member) {
 		super();
 		this.projectDescription = projectDescription;
-		this.member = member;
 	}
 
 
@@ -66,17 +58,10 @@ public class Project {
 	}
 
 
-	public Member getMember() {
-		return member;
-	}
-
-
-	public void setMember(Member member) {
-		this.member = member;
-	}
 	
 	
-
+	@OneToMany(mappedBy = "project")
+	Set<Relationship> relationship;
 
 
 

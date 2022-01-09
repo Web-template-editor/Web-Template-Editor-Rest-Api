@@ -8,6 +8,7 @@ function Header(){
 
   useEffect(()=>{axios.get('http://localhost:8080/projects/project').then((response)=>{
     setProject(response.data)
+
   })},[])
 
   return(

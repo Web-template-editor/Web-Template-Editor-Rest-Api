@@ -9,13 +9,14 @@ import Details from './Components/Details';
 import Home from './Components/Home';
 import './Components/components.css';
 import Media from './Components/Media';
-
+import Welcome from './Components/Welcome';
+import './App.css';
 
 function App(){
 
   
     return(
-      <div className='container'>
+      <div class='container'>
       <Router>
       <Header/>
       <Home/>
@@ -24,6 +25,8 @@ function App(){
           <Route path='/project'><Project/></Route>
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>
+          <Route path='/Welcome'><Welcome/></Route>
+         
 
 
        

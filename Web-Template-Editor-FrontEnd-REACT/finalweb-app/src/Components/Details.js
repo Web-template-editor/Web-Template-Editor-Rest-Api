@@ -1,8 +1,9 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
-import Media from "./Media";
 
 function Details() {
+
+
 
     return (
     
@@ -12,9 +13,20 @@ function Details() {
 
             <ListGroup.Item>External Guide</ListGroup.Item>
             <ListGroup.Item>Internal Guide</ListGroup.Item>
-            <ListGroup.Item action href="/Media">Member 1</ListGroup.Item>
-            <ListGroup.Item>Member 2</ListGroup.Item>
-            <ListGroup.Item>Member 3</ListGroup.Item>
+
+{
+    
+
+}
+
+    <ListGroup.Item  action href="/Media">Members</ListGroup.Item>
+
+
+   
+            
+
+            {/* <ListGroup.Item>Member 2</ListGroup.Item>
+            <ListGroup.Item>Member 3</ListGroup.Item> */}
            
             
         </ListGroup>

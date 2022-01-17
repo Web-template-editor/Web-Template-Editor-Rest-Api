@@ -22,7 +22,7 @@ function App(){
       <Home/>
         <Switch>
         
-          <Route path='/project'><Project/></Route>
+          <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>
           <Route path='/Welcome'><Welcome/></Route>

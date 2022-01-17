@@ -1,17 +1,12 @@
 package com.webtemplateeditor.springboot.project;
 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.webtemplateeditor.springboot.member.Member;
 
 
 
@@ -28,9 +23,9 @@ public class Project {
 	private String projectDescription;
 	
 	
-	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "member_id" ,unique = true)
-	private Member member;
+//	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//	@JoinColumn(name = "member_id" ,unique = true)
+//	private Member member;
 
 
 
@@ -39,11 +34,17 @@ public class Project {
 	}
 
 
-	public Project(String projectDescription, Member member) {
+
+
+
+	public Project(String projectName, String projectDescription) {
 		super();
+		this.projectName = projectName;
 		this.projectDescription = projectDescription;
-		this.member = member;
 	}
+
+
+
 
 
 	public String getProjectName() {
@@ -66,15 +67,7 @@ public class Project {
 	}
 
 
-	public Member getMember() {
-		return member;
-	}
 
-
-	public void setMember(Member member) {
-		this.member = member;
-	}
-	
 	
 
 

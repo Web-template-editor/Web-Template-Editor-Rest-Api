@@ -29,7 +29,7 @@ function Project (props){
 </div>
 
 
-    <Details/>
+    <Details datas={datas}/>
             </div>
         )
         

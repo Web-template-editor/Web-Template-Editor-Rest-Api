@@ -16,7 +16,7 @@ function App(){
 
   
     return(
-      <div class='container'>
+      <div className='container'>
       <Router>
       <Header/>
       <Home/>

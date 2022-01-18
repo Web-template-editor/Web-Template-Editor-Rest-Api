@@ -1,11 +1,12 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
 
-function Details() {
+function Details(props) {
 
 
 
     return (
+       
     
 
         <ListGroup>
@@ -15,11 +16,16 @@ function Details() {
             <ListGroup.Item>Internal Guide</ListGroup.Item>
 
 {
-    
+    (props.datas).map((val,index)=>{
+        return(
+            <ListGroup.Item key={index} action href="/Media">{val.memberName}</ListGroup.Item>
+
+            
+        )
+    })
 
 }
 
-    <ListGroup.Item  action href="/Media">Members</ListGroup.Item>
 
 
    

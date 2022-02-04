@@ -21,6 +21,10 @@ h1{
     color: aliceblue;
     font-size:large;
 }
+h4{
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 table{
   
@@ -36,3 +40,20 @@ td{
     text-align: center;
     color: beige;
 }
+.content{
+    position:left;
+   
+    width: 20%;
+    height: 30%;
+    color:rgb(198, 212, 184)
+  }
+    
+  .text{
+    display: inline;
+    width:30%;
+  }
+    
+  .read-or-hide{
+    color: rgb(192,192,192);
+    cursor: pointer;
+  }

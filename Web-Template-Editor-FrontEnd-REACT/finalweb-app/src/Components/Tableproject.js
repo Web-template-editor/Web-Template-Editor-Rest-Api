@@ -1,4 +1,5 @@
 import React from "react";
+import Project from "./Project";
 function Tableproject(){
     const data =[
         {
@@ -22,7 +23,7 @@ function Tableproject(){
                 return(
                     <tr key={key}>
                         <td>{val.year}</td>
-                        <td>{val.project}</td>
+                        <td ><a href="/Project">{val.project}</a></td>
                         
                     </tr>
                 )

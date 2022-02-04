@@ -11,6 +11,7 @@ import './Components/components.css';
 import Media from './Components/Media';
 import Welcome from './Components/Welcome';
 import Tableproject from './Components/Tableproject';
+import Readmore from './Components/Readmore';
 
 import './App.css';
 
@@ -30,6 +31,7 @@ function App(){
           <Route path='/Media'><Media/></Route>
           <Route path='/Welcome'><Welcome/></Route>
           <Route path='/Tableproject'><Tableproject/></Route>
+          <Route path='/Readmore'><Readmore/></Route>
        
          
 

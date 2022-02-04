@@ -1,5 +1,6 @@
 import React from "react";
 import Tableproject from "./Tableproject";
+import Readmore from "./Readmore";
 
 function Welcome(){
     const styleObj = {
@@ -37,6 +38,7 @@ function Welcome(){
         This page is created to expose the young ideas to the world.<br/>
         This place gives you a great start and exposure.</p>
         <Tableproject/>
+        <Readmore/>
 
         </div>
 

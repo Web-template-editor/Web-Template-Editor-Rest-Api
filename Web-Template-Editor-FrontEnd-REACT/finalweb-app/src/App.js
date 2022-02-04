@@ -10,13 +10,16 @@ import Home from './Components/Home';
 import './Components/components.css';
 import Media from './Components/Media';
 import Welcome from './Components/Welcome';
+import Tableproject from './Components/Tableproject';
+
 import './App.css';
+
 
 function App(){
 
   
     return(
-      <div className='container'>
+      <div class='app'>
       <Router>
       <Header/>
       <Home/>
@@ -26,6 +29,8 @@ function App(){
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>
           <Route path='/Welcome'><Welcome/></Route>
+          <Route path='/Tableproject'><Tableproject/></Route>
+       
          
 
 

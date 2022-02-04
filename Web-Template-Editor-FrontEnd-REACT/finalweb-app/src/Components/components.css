@@ -11,6 +11,28 @@
 .welcome{
     background-color: rgb(250, 250, 250);
     text-align: center;
+    padding: 100% 0;
+    color: aliceblue;
 
     
+}
+h1{
+    text-align: left;
+    color: aliceblue;
+    font-size:large;
+}
+
+table{
+  
+    border: 2px white;
+    width: 800px;
+    height: 200px;
+}
+th{
+    text-align: center;
+    color: beige;
+}
+td{
+    text-align: center;
+    color: beige;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-//import  './linkdin.png';
+
 function Media(){
     return(
         <div class='Media'>

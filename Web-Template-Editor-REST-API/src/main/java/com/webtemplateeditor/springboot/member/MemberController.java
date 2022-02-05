@@ -7,8 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.webtemplateeditor.springboot.project.Project;
+import com.webtemplateeditor.springboot.project.ProjectNotFoundException;
 
 
 
@@ -41,5 +46,19 @@ public class MemberController {
 	@GetMapping("membersbyprojectname/{project_name}")
 	public Iterable<Member> getAllMemberByProjectName(@PathVariable("project_name") String projectName){
 		return this.memberrepository.findByMemberProjectName(projectName);
+	}
+	
+
+	@PutMapping("memberbyid/{member_id}")
+	public ResponseEntity<Member> updatememberById(@PathVariable(value="member_id") Long memberId,@RequestBody Member memberDetails) throws MemberNotFoundException{
+		Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
+				member.setMemberFacebook(memberDetails.getMemberFacebook());
+				member.setMemberId(memberDetails.getMemberId());
+				member.setMemberGithub(memberDetails.getMemberGithub());
+				member.setMemberInstagram(memberDetails.getMemberInstagram());
+				member.setMemberLinkedIn(memberDetails.getMemberLinkedIn());
+				member.setMemberName(memberDetails.getMemberName());
+				member.setProject(memberDetails.getProject());
+				return ResponseEntity.ok(this.memberrepository.save(member));
 	}
 }

@@ -34,7 +34,7 @@ public class Member {
 	private String memberInstagram;
 	
 	@OneToOne
-	@JoinColumn(name = "project_name" )
+	@JoinColumn(name = "projectid" )
 	private Project project;
 
 	public Member() {
@@ -57,6 +57,78 @@ public class Member {
 
 
 
+	public long getMemberId() {
+		return memberId;
+	}
+
+
+
+	public void setMemberId(long memberId) {
+		this.memberId = memberId;
+	}
+
+
+
+	public String getMemberName() {
+		return memberName;
+	}
+
+
+
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
+
+
+	public String getMemberGithub() {
+		return memberGithub;
+	}
+
+
+
+	public void setMemberGithub(String memberGithub) {
+		this.memberGithub = memberGithub;
+	}
+
+
+
+	public String getMemberLinkedIn() {
+		return memberLinkedIn;
+	}
+
+
+
+	public void setMemberLinkedIn(String memberLinkedIn) {
+		this.memberLinkedIn = memberLinkedIn;
+	}
+
+
+
+	public String getMemberFacebook() {
+		return memberFacebook;
+	}
+
+
+
+	public void setMemberFacebook(String memberFacebook) {
+		this.memberFacebook = memberFacebook;
+	}
+
+
+
+	public String getMemberInstagram() {
+		return memberInstagram;
+	}
+
+
+
+	public void setMemberInstagram(String memberInstagram) {
+		this.memberInstagram = memberInstagram;
+	}
+
+
+
 	public Project getProject() {
 		return project;
 	}
@@ -68,58 +140,5 @@ public class Member {
 	}
 
 
-
-	public long getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(long memberId) {
-		this.memberId = memberId;
-	}
-
-	public String getMemberName() {
-		return memberName;
-	}
-
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
-
-	public String getMemberGithub() {
-		return memberGithub;
-	}
-
-	public void setMemberGithub(String memberGithub) {
-		this.memberGithub = memberGithub;
-	}
-
-	public String getMemberLinkedIn() {
-		return memberLinkedIn;
-	}
-
-	public void setMemberLinkedIn(String memberLinkedIn) {
-		this.memberLinkedIn = memberLinkedIn;
-	}
-
-	public String getMemberFacebook() {
-		return memberFacebook;
-	}
-
-	public void setMemberFacebook(String memberFacebook) {
-		this.memberFacebook = memberFacebook;
-	}
-
-	public String getMemberInstagram() {
-		return memberInstagram;
-	}
-
-	public void setMemberInstagram(String memberInstagram) {
-		this.memberInstagram = memberInstagram;
-	}
-	
-
-
-
-	
 
 }

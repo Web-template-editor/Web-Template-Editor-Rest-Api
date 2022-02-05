@@ -15,13 +15,19 @@ import javax.persistence.Table;
 public class Project {
 	
 	@Id
-	private String projectName;
+	private String projectid;
 	
-
+	@Column(name = "project_name")
+	private String projectName;
 	
 	@Column(name = "project_description")
 	private String projectDescription;
 	
+	@Column(name = "internal_guide")
+	private String internalGuide;
+	
+	@Column(name = "external_guide")
+	private String externalGuide;
 	
 //	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 //	@JoinColumn(name = "member_id" ,unique = true)
@@ -35,15 +41,15 @@ public class Project {
 
 
 
-
-
-	public Project(String projectName, String projectDescription) {
-		super();
-		this.projectName = projectName;
-		this.projectDescription = projectDescription;
-	}
-
-
+	public Project(String projectid, String projectName, String projectDescription, String internalGuide,
+		String externalGuide) {
+	super();
+	this.projectid = projectid;
+	this.projectName = projectName;
+	this.projectDescription = projectDescription;
+	this.internalGuide = internalGuide;
+	this.externalGuide = externalGuide;
+}
 
 
 
@@ -64,6 +70,42 @@ public class Project {
 
 	public void setProjectDescription(String projectDescription) {
 		this.projectDescription = projectDescription;
+	}
+
+
+
+	public String getProjectid() {
+		return projectid;
+	}
+
+
+
+	public void setProjectid(String projectid) {
+		this.projectid = projectid;
+	}
+
+
+
+	public String getInternalGuide() {
+		return internalGuide;
+	}
+
+
+
+	public void setInternalGuide(String internalGuide) {
+		this.internalGuide = internalGuide;
+	}
+
+
+
+	public String getExternalGuide() {
+		return externalGuide;
+	}
+
+
+
+	public void setExternalGuide(String externalGuide) {
+		this.externalGuide = externalGuide;
 	}
 
 

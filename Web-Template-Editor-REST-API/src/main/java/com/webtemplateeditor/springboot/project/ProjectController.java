@@ -31,9 +31,9 @@ public class ProjectController {
 	}
 
 	//get employee by id
-	@GetMapping("project/{project_name}")
-	public ResponseEntity<Project> getAllMemberById(@PathVariable(value="project_name") String projectName) throws ProjectNotFoundException{
-			Project project=projectrepository.findById(projectName).orElseThrow(() -> new ProjectNotFoundException("Member is not found for this id::"+projectName));
+	@GetMapping("project/{projectid}")
+	public ResponseEntity<Project> getAllMemberById(@PathVariable(value="projectid") String projectId) throws ProjectNotFoundException{
+			Project project=projectrepository.findById(projectId).orElseThrow(() -> new ProjectNotFoundException("Member is not found for this id::"+projectId));
 					return ResponseEntity.ok().body(project);
 	}
 }

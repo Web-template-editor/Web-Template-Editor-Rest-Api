@@ -20,6 +20,10 @@ h1{
     text-align: left;
     color: aliceblue;
     font-size:large;
+
+}
+h3{
+    color: black;
 }
 h4{
     font-size: medium;
@@ -56,4 +60,10 @@ td{
   .read-or-hide{
     color: rgb(192,192,192);
     cursor: pointer;
+  }
+  .memform{
+      background-color: aliceblue;
+  }
+  .projform{
+      background-color: aliceblue;
   }

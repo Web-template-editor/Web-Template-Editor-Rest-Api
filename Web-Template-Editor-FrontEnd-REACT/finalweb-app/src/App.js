@@ -12,6 +12,12 @@ import Media from './Components/Media';
 import Welcome from './Components/Welcome';
 import Tableproject from './Components/Tableproject';
 import Readmore from './Components/Readmore';
+import Selection from './Components/Selection';
+import Tablemember from './Components/Tablemember';
+import Members from './Components/Members';
+import Memberform from './Components/Memberform';
+import Projectlist from './Components/Projectslist';
+import Projectform from './Components/Projectform';
 
 import './App.css';
 
@@ -32,6 +38,12 @@ function App(){
           <Route path='/Welcome'><Welcome/></Route>
           <Route path='/Tableproject'><Tableproject/></Route>
           <Route path='/Readmore'><Readmore/></Route>
+          <Route path='/Selection'><Selection/></Route>
+          <Route path='/Tablemember'><Tablemember/></Route>
+          <Route path='/Members'><Members/></Route>
+          <Route path='/Memberform'><Memberform/></Route>
+          <Route path='/Projectlist'><Projectlist/></Route>
+          <Route path='/Projectform'><Projectform/></Route>
        
          
 

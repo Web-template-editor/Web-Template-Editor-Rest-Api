@@ -1,6 +1,8 @@
 package com.webtemplateeditor.springboot.project;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +45,13 @@ public class ProjectController {
 					return ResponseEntity.ok().body(project);
 	}
 	
+	@PostMapping("project")
+	public Project createProject(@RequestBody Project project) {
+		
+		return this.projectrepository.save(project);
+		
+	}
+	
 	@PutMapping("project/{projectid}")
 	public ResponseEntity<Project> updateprojectById(@PathVariable(value="projectid") String projectId,@RequestBody Project projectDetails) throws ProjectNotFoundException{
 		Project project=projectrepository.findById(projectId).orElseThrow(() -> new ProjectNotFoundException("Member is not found for this id::"+projectId));
@@ -54,12 +64,15 @@ public class ProjectController {
 				return ResponseEntity.ok(this.projectrepository.save(project));
 	}
 				
-//	@DeleteMapping("project/{projectid}")
-//	public ResponseEntity<String> deleteProjectById(@PathVariable(value="projectid") String projectId){
-//		return new ResponseEntity<String>(projectrepository.deleteByProjectId(projectId,HttpStatus.OK));
-//				
-//						
-//	}
+	@DeleteMapping("project/{projectid}")
+	public Map<String, Boolean> deleteProjectById(@PathVariable(value="projectid") String projectId) throws ProjectNotFoundException{
+		Project project=projectrepository.findById(projectId)
+				.orElseThrow(()->new ProjectNotFoundException("Project Not Found"+projectId));
+		this.projectrepository.delete(project);
+		Map<String, Boolean> response=new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return response;	
+	}
 	
 	
 	

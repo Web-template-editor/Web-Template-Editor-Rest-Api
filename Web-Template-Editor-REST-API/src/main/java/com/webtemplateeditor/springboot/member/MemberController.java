@@ -1,12 +1,16 @@
 package com.webtemplateeditor.springboot.member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,14 +33,21 @@ public class MemberController {
 	private MemberRepository memberrepository;
 	
 	//To get all members and details of them
-	@GetMapping("allmember")
+	@GetMapping("member")
 
 	public List<Member> getAllMembers(){
 		return this.memberrepository.findAll();
 	}
+	
+	@PostMapping("member")
+	public Member createMember(@RequestBody Member member) {
+		
+		return this.memberrepository.save(member);
+		
+	}
 
 	//get object by id
-	@GetMapping("memberbyid/{member_id}")
+	@GetMapping("member/{member_id}")
 	public ResponseEntity<Member> getAllMemberById(@PathVariable(value="member_id") Long memberId) throws MemberNotFoundException{
 			Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
 					return ResponseEntity.ok().body(member);
@@ -49,7 +60,7 @@ public class MemberController {
 	}
 	
 
-	@PutMapping("memberbyid/{member_id}")
+	@PutMapping("member/{member_id}")
 	public ResponseEntity<Member> updatememberById(@PathVariable(value="member_id") Long memberId,@RequestBody Member memberDetails) throws MemberNotFoundException{
 		Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
 				member.setMemberFacebook(memberDetails.getMemberFacebook());
@@ -60,5 +71,15 @@ public class MemberController {
 				member.setMemberName(memberDetails.getMemberName());
 				member.setProject(memberDetails.getProject());
 				return ResponseEntity.ok(this.memberrepository.save(member));
+	}
+	
+	@DeleteMapping("memberbyid/{member_id}")
+	public Map<String, Boolean> deleteMmeberById(@PathVariable(value="member_id") Long memberId) throws MemberNotFoundException{
+		Member member=memberrepository.findById(memberId)
+				.orElseThrow(()->new MemberNotFoundException("Member Not Found"+memberId));
+		this.memberrepository.delete(member);
+		Map<String, Boolean> response=new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return response;	
 	}
 }

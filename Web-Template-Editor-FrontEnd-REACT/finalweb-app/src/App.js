@@ -27,9 +27,10 @@ function App(){
   
     return(
       <div class='app'>
-      <Router>
+      <Router >
       <Header/>
       <Home/>
+     
         <Switch>
         
           <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
@@ -44,6 +45,7 @@ function App(){
           <Route path='/Memberform'><Memberform/></Route>
           <Route path='/Projectlist'><Projectlist/></Route>
           <Route path='/Projectform'><Projectform/></Route>
+          <Route path='/'><Welcome/></Route>
        
          
 

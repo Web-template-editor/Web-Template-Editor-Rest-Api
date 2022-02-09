@@ -20,6 +20,7 @@ h1{
     text-align: left;
     color: aliceblue;
     font-size:large;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 h3{
@@ -28,6 +29,7 @@ h3{
 h4{
     font-size: medium;
     font-family: 'Courier New', Courier, monospace;
+    color: rgb(11, 77, 116);
 }
 
 table{
@@ -35,6 +37,10 @@ table{
     border: 2px white;
     width: 800px;
     height: 200px;
+    margin-left: 25%;
+    margin-right: 25%;
+
+   
 }
 th{
     text-align: center;
@@ -49,12 +55,14 @@ td{
    
     width: 20%;
     height: 30%;
-    color:rgb(198, 212, 184)
+    color:rgb(19, 75, 107)
   }
     
   .text{
     display: inline;
     width:30%;
+    color: rgb(17, 39, 110);
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5XXQoSeA347qRukwp7Ny0LB0f9ip5bjOJZg&usqp=CAU);
   }
     
   .read-or-hide{
@@ -67,3 +75,19 @@ td{
   .projform{
       background-color: aliceblue;
   }
+.container{
+     color: rgb(221, 236, 236);
+     text-align: center;
+     font-family: 'Courier New', Courier, monospace;
+  }
+h2{
+    color: rgb(209, 224, 224);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 6cm;
+ }
+ p{
+     font-family: 'Courier New', Courier, monospace;
+     color:rgb(219, 236, 231);
+     
+ }

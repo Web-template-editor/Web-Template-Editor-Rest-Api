@@ -1,5 +1,4 @@
 import React from "react";
-import Project from "./Project";
 function Tableproject(){
     const data =[
         {

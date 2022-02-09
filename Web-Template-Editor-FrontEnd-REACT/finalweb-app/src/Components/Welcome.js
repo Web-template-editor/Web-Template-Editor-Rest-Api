@@ -1,15 +1,11 @@
 import React from "react";
 import Tableproject from "./Tableproject";
 import Readmore from "./Readmore";
+import { Card } from "react-bootstrap";
+
 
 function Welcome(){
-    const styleObj = {
-        fontSize: 78,
-        color:"aliceblue",
-        textAlign: "center",
-        
-        
-    }
+   
     const styleWeb ={
         fontSize:33,
         textAlign:"left",
@@ -22,21 +18,29 @@ function Welcome(){
         textAlign:"right",
         color:"white"
     }
-    const stylepara={
-        fontSize:14,
-        textAlign:"right",
-        color:"white"
-    }
+
     
     return(
         <div>
-        <h1 style={styleObj}>WELCOME</h1>
+        <h2>WELCOME</h2>
         <h1 style={styleWeb}>TKM COLLEGE OF ENGINEERING</h1>
-        <h1 style={styleheading}>ABOUT</h1>
-        <p style={stylepara}>TKM Engineering College kollam here presents a platform for the next generation.<br/> 
-        MCA batch of 2020-2022 created this web page as their project during their final semester.<br/>
-        This page is created to expose the young ideas to the world.<br/>
-        This place gives you a great start and exposure.</p>
+        
+        <Card className="bg-dark text-white">
+  <Card.Img src="https://cdn.mwallpapers.com/photos/celebrities/colors/md/work-android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4khd-wallpapers-desktop-background-android-iphone-1080p-4k-k3t7m.jpg" alt="Card image" height="100px"/>
+  <Card.ImgOverlay>
+    <Card.Title style={{color:"black"}}>ABOUT</Card.Title>
+    <Card.Text style={{color:"black"}}>
+    TKM Engineering College kollam here presents a platform for the next generation.
+        MCA batch of 2020-2022 created this web page as their project during their final semester.
+        This page is created to expose the young ideas to the world.
+        This place gives you a great start and exposure.
+    </Card.Text>
+   
+  </Card.ImgOverlay>
+</Card>
+<br/>
+        
+       
         <Tableproject/>
         <Readmore/>
 

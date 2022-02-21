@@ -21,7 +21,7 @@ function Welcome(){
 
     
     return(
-        <div>
+        <div className="container">
         <h2>WELCOME</h2>
         <h1 style={styleWeb}>TKM COLLEGE OF ENGINEERING</h1>
         
@@ -41,7 +41,7 @@ function Welcome(){
 <br/>
         
        
-        <Tableproject/>
+        {/* <Tableproject/> */}
         <Readmore/>
 
         </div>

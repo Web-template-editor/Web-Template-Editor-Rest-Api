@@ -27,17 +27,17 @@ function App(){
 
   
     return(
-      <div class='app'>
+      <div className='app'>
       <Router >
       <Header/>
       <Home/>
      
         <Switch>
         
-          <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
+          <Route path='/project/' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>
-          <Route path='/Welcome'><Welcome/></Route>
+          {/* <Route path='/Welcome'><Welcome/></Route> */}
           <Route path='/Tableproject'><Tableproject/></Route>
           <Route path='/Readmore'><Readmore/></Route>
           <Route path='/Selection'><Selection/></Route>

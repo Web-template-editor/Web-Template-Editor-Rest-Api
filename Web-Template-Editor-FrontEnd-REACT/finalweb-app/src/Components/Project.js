@@ -20,13 +20,13 @@ function Project (props){
 
         return(
         
-            <div>
+          
 
             <div className='project'>
             <br/><br/>
-            <h1>{project.projectName}</h1><br/>
-            <p>{project.projectDescription} </p>
-</div>
+            <h1>OPEN EHR</h1><br/>
+            <p>asjkzsmfdl.masdfslldsflk;dsanflansf';adsf sasfddkfma;jlma'sd;lfmads;lmfasjkfdjk;asdf fdfnsaisfdjn;f asdfdsfjkfdas;lnkf asfdnlkjalkfdkhlj;fdlm  ,dsanflansf lanf </p>
+
 
 
     <Details datas={datas}/>

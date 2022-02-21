@@ -9,7 +9,7 @@ function Details(props) {
        
     
 
-        <ListGroup>
+        <ListGroup className="container">
         <h1>DETAILS</h1>
 
             <ListGroup.Item>External Guide</ListGroup.Item>

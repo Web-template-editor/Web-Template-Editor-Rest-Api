@@ -6,7 +6,7 @@ Switch}from 'react-router-dom';
 import Header from './Components/Header';
 import Project from './Components/Project';
 import Details from './Components/Details';
-import Home from './Components/Home';
+// import Home from './Components/Home';
 import './Components/components.css';
 import Media from './Components/Media';
 import Welcome from './Components/Welcome';
@@ -21,6 +21,7 @@ import Projectform from './Components/Projectform';
 
 
 import './App.css';
+import Projects from './Components/Projects';
 
 
 function App(){
@@ -30,7 +31,6 @@ function App(){
       <div className='app'>
       <Router >
       <Header/>
-      <Home/>
      
         <Switch>
         
@@ -41,12 +41,13 @@ function App(){
           <Route path='/Tableproject'><Tableproject/></Route>
           <Route path='/Readmore'><Readmore/></Route>
           <Route path='/Selection'><Selection/></Route>
-          <Route path='/Tablemember'><Tablemember/></Route>
+          {/* <Route path='/Tablemember'><Tablemember/></Route> */}
           <Route path='/Members'><Members/></Route>
           <Route path='/Memberform'><Memberform/></Route>
           <Route path='/Projectlist'><Projectlist/></Route>
           <Route path='/Projectform'><Projectform/></Route>
-       
+          <Route path='/Projects'><Projects/></Route>
+
           <Route path='/'><Welcome/></Route>
        
          

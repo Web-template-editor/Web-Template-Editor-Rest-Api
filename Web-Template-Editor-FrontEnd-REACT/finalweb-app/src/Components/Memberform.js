@@ -7,10 +7,10 @@ import { Button } from "react-bootstrap";
 function Memberform() {
 
     return (
-        <div className="memform">
-            <h3>NEW MEMBER FORM</h3>
+        <div className="container text-white mt-3">
+            <h3 className="sub-heading text-white">ADD NEW MEMBER</h3>
             <Form>
-                <Form.Group as={Row} className="mb-1" controlId="formPlaintextId">
+                <Form.Group as={Row} className="mb-2" controlId="formPlaintextId">
                     <Form.Label column sm="2">
                         Member ID
                     </Form.Label>
@@ -26,7 +26,7 @@ function Memberform() {
                         <Form.Control type="text" placeholder="Name" />
                     </Col>
                 </Form.Group>
-                <Form.Group as={Row} className="mb-3" controlId="formPlaintextProject">
+                <Form.Group as={Row} className="mb-2" controlId="formPlaintextProject">
                     <Form.Label column sm="2">
                         Project
                     </Form.Label>
@@ -34,7 +34,7 @@ function Memberform() {
                         <Form.Control type="text" placeholder="Project" />
                     </Col>
                 </Form.Group>
-                <Form.Group as={Row} className="mb-4" controlId="formPlaintextEmail">
+                <Form.Group as={Row} className="mb-2" controlId="formPlaintextEmail">
                     <Form.Label column sm="2">
                         Email
                     </Form.Label>
@@ -42,17 +42,16 @@ function Memberform() {
                         <Form.Control type="text" placeholder="mail id" />
                     </Col>
                 </Form.Group>
-                <Form.Group as={Row} className="mb-5" controlId="formPlaintextPhone">
+                <Form.Group as={Row} className="mb-2" controlId="formPlaintextPhone">
                     <Form.Label column sm="2">
                         Phone
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control type="text" placeholder="Phone number" />
+                        <Button className="mt-4 mb-4" style={{float: 'right'}}  variant="outline-primary"><a href="/Memberform"> Add Member</a></Button><br/>
+
                     </Col>
                 </Form.Group>
-                <Button variant="primary"  style={{float: 'center'}} type="submit">
-                Submit
-                </Button>
             </Form>
         </div>
     )

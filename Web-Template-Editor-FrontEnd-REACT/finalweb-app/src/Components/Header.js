@@ -15,12 +15,13 @@ function Header(){
   
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="container">
     
-  <Navbar.Brand href="">WEB-TEMPLATE PROJECT</Navbar.Brand>
+  <Navbar.Brand href="/">WEB-TEMPLATE PROJECT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
       <Nav.Link href="/">HOME</Nav.Link>
-     
+      <Nav.Link href="/Projects">PROJECTS</Nav.Link>
+
       
     </Nav>
     <Nav>

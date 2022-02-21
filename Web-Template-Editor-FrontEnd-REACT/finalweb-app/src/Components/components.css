@@ -1,9 +1,4 @@
-.project{
-    border: black;
-    background-color: rgba(241, 240, 201, 0.678);
-    
-    
-}
+
 .details{
 
     background-color: rgb(205, 178, 231);
@@ -75,7 +70,7 @@ td{
   .projform{
       background-color: aliceblue;
   }
-.container{
+.home{
      color: rgb(221, 236, 236);
      text-align: center;
      font-family: 'Courier New', Courier, monospace;
@@ -91,3 +86,16 @@ h2{
      color:rgb(219, 236, 231);
      
  }
+.project-name{
+    font-size: 5rem;
+    text-align: center;
+}
+.sub-heading{
+    font-size: 2rem;
+
+}
+.projects-heading
+{
+    font-size: 5rem;
+    text-align: center;
+}

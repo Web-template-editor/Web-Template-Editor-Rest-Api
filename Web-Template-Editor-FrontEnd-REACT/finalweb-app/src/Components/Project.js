@@ -13,20 +13,14 @@ function Project (props){
 
         setProject(response.data[0].project)
 
-
-
-
       })},[])
 
         return(
         
-          
-
-            <div className='project'>
+            <div className='project container bg-dark text-white'>
             <br/><br/>
-            <h1>OPEN EHR</h1><br/>
+            <h1 className="project-name">OPEN EHR</h1><br/>
             <p>asjkzsmfdl.masdfslldsflk;dsanflansf';adsf sasfddkfma;jlma'sd;lfmads;lmfasjkfdjk;asdf fdfnsaisfdjn;f asdfdsfjkfdas;lnkf asfdnlkjalkfdkhlj;fdlm  ,dsanflansf lanf </p>
-
 
 
     <Details datas={datas}/>

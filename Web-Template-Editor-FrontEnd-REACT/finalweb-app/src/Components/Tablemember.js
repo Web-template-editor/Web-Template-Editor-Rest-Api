@@ -2,12 +2,14 @@ import React from "react";
 import { Button, Table } from "react-bootstrap";
 function Tablemember(){
     return(
-        <Table striped bordered hover variant="dark">
+      <div className="row justify-content-center mt-4">
+  
+  <Table className="col-auto" striped bordered hover variant="dark">
   <thead>
     <tr>
-      <th>Member id</th>
-      <th> Name</th>
-      <th> Edit</th>
+      <th width="100">Member id</th>
+      <th width="400"> Name</th>
+      <th > Edit</th>
       <th>Delete</th>
     </tr>
   </thead>
@@ -27,6 +29,8 @@ function Tablemember(){
     
   </tbody>
 </Table>
+      </div>
+      
     )
 }
 export default Tablemember

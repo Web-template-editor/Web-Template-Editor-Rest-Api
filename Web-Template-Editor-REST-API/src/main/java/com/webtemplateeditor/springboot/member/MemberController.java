@@ -48,20 +48,20 @@ public class MemberController {
 
 	//get object by id
 	@GetMapping("member/{member_id}")
-	public ResponseEntity<Member> getAllMemberById(@PathVariable(value="member_id") Long memberId) throws MemberNotFoundException{
+	public ResponseEntity<Member> getAllMemberById(@PathVariable(value="member_id") String memberId) throws MemberNotFoundException{
 			Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
 					return ResponseEntity.ok().body(member);
 	}
 	
-	//Get all objects with a particular project name
-	@GetMapping("membersbyprojectname/{project_name}")
-	public Iterable<Member> getAllMemberByProjectName(@PathVariable("project_name") String projectName){
-		return this.memberrepository.findByMemberProjectName(projectName);
+	//Get all objects with a particular project id
+	@GetMapping("membersbyprojectid/{project_id}")
+	public Iterable<Member> getAllMemberByProjectId(@PathVariable("project_id") String id){
+		return this.memberrepository.findByMemberProjectId(id);
 	}
 	
 
 	@PutMapping("member/{member_id}")
-	public ResponseEntity<Member> updatememberById(@PathVariable(value="member_id") Long memberId,@RequestBody Member memberDetails) throws MemberNotFoundException{
+	public ResponseEntity<Member> updatememberById(@PathVariable(value="member_id") String memberId,@RequestBody Member memberDetails) throws MemberNotFoundException{
 		Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
 				member.setMemberFacebook(memberDetails.getMemberFacebook());
 				member.setMemberId(memberDetails.getMemberId());
@@ -74,7 +74,7 @@ public class MemberController {
 	}
 	
 	@DeleteMapping("memberbyid/{member_id}")
-	public Map<String, Boolean> deleteMmeberById(@PathVariable(value="member_id") Long memberId) throws MemberNotFoundException{
+	public Map<String, Boolean> deleteMmeberById(@PathVariable(value="member_id") String memberId) throws MemberNotFoundException{
 		Member member=memberrepository.findById(memberId)
 				.orElseThrow(()->new MemberNotFoundException("Member Not Found"+memberId));
 		this.memberrepository.delete(member);

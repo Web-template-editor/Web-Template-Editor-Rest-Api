@@ -6,15 +6,20 @@ function Details(props) {
        
     <div>
 <ListGroup>
-        <h1 className="project-details-heading">DETAILS</h1>
-            <ListGroup.Item>External Guide</ListGroup.Item>
-            <ListGroup.Item>Internal Guide</ListGroup.Item>
-            <ListGroup.Item action href="/Media">Member 1</ListGroup.Item>
+        <h1 className="sub-heading">DETAILS</h1>
+            <ListGroup.Item active>Internal Guide</ListGroup.Item>
+            <ListGroup.Item>{props.projectdata.internalGuide}</ListGroup.Item>
+            <br />
+            <ListGroup.Item active>External Guide</ListGroup.Item>
+            <ListGroup.Item>{props.projectdata.externalGuide}</ListGroup.Item>
+            <br />
+            <ListGroup.Item active>Students</ListGroup.Item>
+
 {
+    
     (props.datas).map((val,index)=>{
         return(
             <ListGroup.Item key={index} action href="/Media">{val.memberName}</ListGroup.Item>
-
             
         )
     })

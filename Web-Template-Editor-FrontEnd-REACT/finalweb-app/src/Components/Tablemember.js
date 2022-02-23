@@ -25,7 +25,7 @@ setData(response.data)
     
     {data.map((val,key)=>{
                 return(
-                  <tr>
+                  <tr key={key}>
       <td>{val.memberId}</td>
       <td>{val.memberName}</td>
       <td><Button as="input" type="reset" value="Reset" /></td>

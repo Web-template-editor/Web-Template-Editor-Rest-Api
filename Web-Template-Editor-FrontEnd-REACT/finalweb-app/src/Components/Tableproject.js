@@ -36,8 +36,8 @@ setData(response.data)
                            <td>{val.projectid}</td>
       <td>{val.projectName}</td>
       <td><Button as="input" type="reset" value="Reset" /></td>
-      <td><Button variant="outline-danger" value={val.projectid} onClick={deleteProject} >Delete</Button></td>
-                        
+      <td href='/Projectlist' ><Button onClick={deleteProject}  value={val.projectid} variant="outline-danger"  >Delete</Button></td>
+              
                     </tr>
                 )
             })}
@@ -51,6 +51,11 @@ setData(response.data)
     function deleteProject(e){
 
       console.log(e.target.value)
+      
+       axios.delete('http://localhost:8080/projects/project/'+e.target.value)
+      .then((response) =>{
+        console.log("deleted")
+      } );
 
     }
 }

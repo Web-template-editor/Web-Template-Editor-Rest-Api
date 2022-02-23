@@ -21,7 +21,7 @@ const ReadMore = ({ children }) => {
   
 const Readmore = (props) => {
   return (
-    <div class='content'>
+    <div className=' content'>
       <h4>
       <Card style={{ width: '18rem' }}>
   {/* <Card.Img variant="top" src="https://healthitanalytics.com/images/site/features/_normal/ThinkstockPhotos-637917212.jpg" /> */}

@@ -1,6 +1,14 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 function Tablemember(){
+  const[data,setData]=useState([])
+
+  useEffect(()=>{axios.get('http://localhost:8080/members/member/').then((response)=>{
+setData(response.data)
+
+
+    })},[])  
     return(
       <div className="row justify-content-center mt-4">
   
@@ -14,18 +22,19 @@ function Tablemember(){
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
+    
+    {data.map((val,key)=>{
+                return(
+                  <tr>
+      <td>{val.memberId}</td>
+      <td>{val.memberName}</td>
       <td><Button as="input" type="reset" value="Reset" /></td>
       <td><Button variant="outline-danger">Delete</Button></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td><Button as="input" type="reset" value="Reset" /></td>
-      <td><Button variant="outline-danger">Delete</Button></td>
-    </tr>
+    </tr>  
+                  
+                )
+            })}
+    
     
   </tbody>
 </Table>

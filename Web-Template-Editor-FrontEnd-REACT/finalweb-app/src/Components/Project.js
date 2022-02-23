@@ -6,7 +6,7 @@ function Project (props){
 
     const[project,setProject]=useState([])
     const[datas,setDatas]=useState([])
-    useEffect(()=>{axios.get('http://localhost:8080/members/membersbyprojectname/'+props.match.params.id
+    useEffect(()=>{axios.get('http://localhost:8080/members/membersbyprojectid/'+props.match.params.id
     ).then((response)=>{
 
         setDatas(response.data)
@@ -19,11 +19,11 @@ function Project (props){
         
             <div className='project container bg-dark text-white'>
             <br/><br/>
-            <h1 className="project-name">OPEN EHR</h1><br/>
-            <p>asjkzsmfdl.masdfslldsflk;dsanflansf';adsf sasfddkfma;jlma'sd;lfmads;lmfasjkfdjk;asdf fdfnsaisfdjn;f asdfdsfjkfdas;lnkf asfdnlkjalkfdkhlj;fdlm  ,dsanflansf lanf </p>
+            <h1 className="project-name">{project.projectName}</h1><br/>
+            <p>{project.projectDescription}</p>
 
 
-    <Details datas={datas}/>
+    <Details datas={datas} projectdata={project}/>
             </div>
         )
         

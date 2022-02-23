@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Readmore from "./Readmore";
 import { Card } from "react-bootstrap";
 import Home from "./Home";
+import axios from "axios";
 
 
 function Welcome(){
-   
+ 
+    const[data,setData]=useState([])
+
+    useEffect(()=>{axios.get('http://localhost:8080/projects/project/').then((response)=>{
+setData(response.data)
+
+
+      })},[])    
     const styleWeb ={
         fontSize:33,
         textAlign:"left",
@@ -23,7 +31,6 @@ function Welcome(){
     return(
         <div className="container">
                     <Home/>
-
         <h2 style={styleheading}>WELCOME</h2>
         <h1 style={styleWeb}>TKM COLLEGE OF ENGINEERING</h1>
         
@@ -38,10 +45,21 @@ function Welcome(){
    
 </Card>
 <br/>
-        
-       
-        {/* <Tableproject/> */}
-        <Readmore/>
+<div className="row">
+
+{data.map((val,key)=>{
+                return(
+                    <div className="col">
+
+                    <Readmore projectname={val.projectName} projectdescription={val.projectDescription} pid={val.projectid} />
+                    </div>
+
+                   
+                )
+            })}
+        </div>
+
+
 
         </div>
 

@@ -34,7 +34,7 @@ function App(){
      
         <Switch>
         
-          <Route path='/project/' render={(props) => <Project {...props} />}/> 
+          <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>
           {/* <Route path='/Welcome'><Welcome/></Route> */}

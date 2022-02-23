@@ -1,6 +1,14 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 function Tableproject(){
+  const[data,setData]=useState([])
+
+  useEffect(()=>{axios.get('http://localhost:8080/projects/project/').then((response)=>{
+setData(response.data)
+
+
+    })},[])  
     // const data =[
     //     {
     //         year :"2020-2022",project : "OPEN EHR"
@@ -42,7 +50,7 @@ function Tableproject(){
     </tr>
   </thead>
   <tbody>
-    <tr>
+    {/* <tr>
       <td>101</td>
       <td>OPEN EHR</td>
       <td><Button as="input" type="reset" value="Reset" /></td>
@@ -53,8 +61,19 @@ function Tableproject(){
       <td>Web Template Editor</td>
       <td><Button as="input" type="reset" value="Reset" /></td>
       <td><Button variant="outline-danger">Delete</Button></td>
-    </tr>
-    
+    </tr> */}
+    {data.map((val,key)=>{
+                return(
+                    
+                    <tr key={key}>
+                           <td>{val.projectid}</td>
+      <td>{val.projectName}</td>
+      <td><Button as="input" type="reset" value="Reset" /></td>
+      <td><Button variant="outline-danger">Delete</Button></td>
+                        
+                    </tr>
+                )
+            })}
     
   </tbody>
 </Table>

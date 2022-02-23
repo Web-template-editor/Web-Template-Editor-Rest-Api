@@ -1,14 +1,24 @@
-import React from "react";
 
+
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useState } from "react";
 function Projects(){
-    const data =[
-        {
-            year :"2020-2022",project : "OPEN EHR"
-        },
-        {
-            year : "2020-2022", project : "CALANDER MANAGEMENT"
-        }
-    ]
+    const[data,setData]=useState([])
+
+    useEffect(()=>{axios.get('http://localhost:8080/projects/project/').then((response)=>{
+setData(response.data)
+
+
+      })},[])    
+    // const data =[
+    //     {
+    //         year :"2020-2022",project : "OPEN EHR"
+    //     },
+    //     {
+    //         year : "2020-2022", project : "CALANDER MANAGEMENT"
+    //     }
+    // ]
 
     return(
         <div className="row justify-content-center">
@@ -23,9 +33,10 @@ function Projects(){
             </tr>
             {data.map((val,key)=>{
                 return(
+                    
                     <tr key={key}>
-                        <td>{val.year}</td>
-                        <td ><a href="/Project">{val.project}</a></td>
+                        <td>2020-2022</td>
+                        <td ><a href={"/Project/"+val.projectid}>{val.projectName}</a></td>
                         
                     </tr>
                 )

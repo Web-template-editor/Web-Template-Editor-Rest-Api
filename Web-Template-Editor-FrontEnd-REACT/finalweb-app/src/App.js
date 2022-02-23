@@ -18,6 +18,7 @@ import Members from './Components/Members';
 import Memberform from './Components/Memberform';
 import Projectlist from './Components/Projectslist';
 import Projectform from './Components/Projectform';
+import UpdateProjectForm from './Components/UpdateProjectForm';
 
 
 import './App.css';
@@ -33,7 +34,8 @@ function App(){
       <Header/>
      
         <Switch>
-        
+        <Route path='/update/:id' render={(props) => <UpdateProjectForm {...props} />}/> 
+
           <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>

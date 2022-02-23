@@ -35,8 +35,8 @@ setData(response.data)
                     <tr key={key}>
                            <td>{val.projectid}</td>
       <td>{val.projectName}</td>
-      <td><Button as="input" type="reset" value="Reset" /></td>
-      <td href='/Projectlist' ><Button onClick={deleteProject}  value={val.projectid} variant="outline-danger"  >Delete</Button></td>
+      <td><Button  type="reset" value={val.projectid} href={'/update/'+val.projectid} >Edit</Button></td>
+      <td><Button onClick={deleteProject}  value={val.projectid} variant="outline-danger"  >Delete</Button></td>
               
                     </tr>
                 )

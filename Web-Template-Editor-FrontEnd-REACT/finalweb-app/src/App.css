@@ -1,6 +1,15 @@
 .app{
     background: url(pic3.jpeg);
+    
+    height: auto;
+    width: 100%;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   
+    /* Font Colour */
+  
     
    
 }

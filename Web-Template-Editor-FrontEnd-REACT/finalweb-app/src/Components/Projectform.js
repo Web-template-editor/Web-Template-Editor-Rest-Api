@@ -1,11 +1,18 @@
 import axios from "axios";
 import React from "react";
+import { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+
 function Projectform() {
 
+const[project_id,setProjectId]=useState('')
+const[project_name,setProjectName]=useState('')
+const[external_guide,setProjectExternalGuide]=useState('')
+const[internal_guide,setProjectInternalGuide]=useState('')
+const[project_description,setProjectDescription]=useState('')
 
 
     return (
@@ -18,7 +25,7 @@ function Projectform() {
                         PROJECT ID
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="text" placeholder="ID" />
+                        <Form.Control value={project_id} onChange={(e)=>setProjectId(e.target.value)} type="text" placeholder="ID" />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2" controlId="formPlaintextName">
@@ -26,7 +33,7 @@ function Projectform() {
                        PROJECT NAME
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="text" placeholder="Name" />
+                        <Form.Control value={project_name} onChange={(e)=>setProjectName(e.target.value)} type="text"  placeholder="Name" />
                     </Col>
                 </Form.Group>
                 
@@ -35,7 +42,7 @@ function Projectform() {
                         External GUIDE
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="text" placeholder="Guide" />
+                        <Form.Control value={external_guide} onChange={(e)=>setProjectExternalGuide(e.target.value)} type="text" placeholder="External Guide" />
                     </Col>
                 </Form.Group>
                 
@@ -44,7 +51,16 @@ function Projectform() {
                         Internal GUIDE
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="text" placeholder="GUIDE" />
+                        <Form.Control value={internal_guide} onChange={(e)=>setProjectInternalGuide(e.target.value)} type="text" placeholder="Internal Guide" />
+                    </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} value={project_description} onChange={(e)=>setProjectDescription(e.target.value)} className="mb-2" controlId="formPlaintextprojectDescription">
+                    <Form.Label column sm="2">
+                        Project Description
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control as='textarea' rows={10} placeholder='Describe about your project' type="text"  />
                     </Col>
                 </Form.Group>
                 
@@ -56,31 +72,29 @@ function Projectform() {
 
                     <Col sm="10">
                     
-                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}  variant="outline-primary">ADD</Button><br/>
+                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}} href='/Projectlist'  variant="outline-primary">ADD</Button><br/>
                     </Col>
                 </Form.Group>
 
             </Form>
         </div>
     )
+    function submitData(){
+        let employee =  {projectid: project_id,
+        projectName: project_name,
+        projectDescription: project_description,
+        internalGuide: internal_guide,
+        externalGuide: external_guide};
+    
+    
+    
+        axios
+        .post("http://localhost:8080/projects/project", employee)
+        .then((response) => {
+        });
 }
 
-function submitData(){
-    let employee =  {projectid: "om,ewsdfk World!",
-    projectName: "Thknsfdfsis is a new post.",
-    projectDescription: "snd ds efsfas  ffaf",
-    internalGuide: "ds",
-    externalGuide: "ds"};
-    console.log('employee => ' + JSON.stringify(employee));
-    console.log("ok");
 
-
-
-    axios
-    .post("http://localhost:8080/projects/project", employee)
-    .then((response) => {
-        console.log("success")
-    });
 
 }
 export default Projectform

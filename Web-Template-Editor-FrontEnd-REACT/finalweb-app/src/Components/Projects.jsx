@@ -26,11 +26,13 @@ setData(response.data)
             
         <h1 className="projects-heading">PROJECTS</h1>
         <table>
-            <tr>
+            <thead>
+                <tr>
                 <th>YEAR</th>
                 <th>PROJECT</th>
-                
-            </tr>
+                </tr>
+            </thead>
+            <tbody>
             {data.map((val,key)=>{
                 return(
                     
@@ -41,6 +43,7 @@ setData(response.data)
                     </tr>
                 )
             })}
+            </tbody>
         </table>
         </div>
         </div>

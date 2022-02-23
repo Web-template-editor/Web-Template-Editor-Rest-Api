@@ -9,36 +9,14 @@ setData(response.data)
 
 
     })},[])  
-    // const data =[
-    //     {
-    //         year :"2020-2022",project : "OPEN EHR"
-    //     },
-    //     {
-    //         year : "2020-2022", project : "CALANDER MANAGEMENT"
-    //     }
-    // ]
+
 
     return(
         
         <div className="table">
             
         <h1 className="sub-heading">PROJECTS</h1>
-        {/* <table>
-            <tr>
-                <th>YEAR</th>
-                <th>PROJECT</th>
-                
-            </tr>
-            {data.map((val,key)=>{
-                return(
-                    <tr key={key}>
-                        <td>{val.year}</td>
-                        <td ><a href="/Project">{val.project}</a></td>
-                        
-                    </tr>
-                )
-            })}
-        </table> */}
+ 
 <div className="row justify-content-center">
 <Table className="col-auto" striped bordered hover variant="dark">
   <thead>
@@ -50,18 +28,7 @@ setData(response.data)
     </tr>
   </thead>
   <tbody>
-    {/* <tr>
-      <td>101</td>
-      <td>OPEN EHR</td>
-      <td><Button as="input" type="reset" value="Reset" /></td>
-      <td><Button variant="outline-danger">Delete</Button></td>
-    </tr>
-    <tr>
-      <td>102</td>
-      <td>Web Template Editor</td>
-      <td><Button as="input" type="reset" value="Reset" /></td>
-      <td><Button variant="outline-danger">Delete</Button></td>
-    </tr> */}
+
     {data.map((val,key)=>{
                 return(
                     
@@ -69,7 +36,7 @@ setData(response.data)
                            <td>{val.projectid}</td>
       <td>{val.projectName}</td>
       <td><Button as="input" type="reset" value="Reset" /></td>
-      <td><Button variant="outline-danger">Delete</Button></td>
+      <td><Button variant="outline-danger" value={val.projectid} onClick={deleteProject} >Delete</Button></td>
                         
                     </tr>
                 )
@@ -81,5 +48,10 @@ setData(response.data)
         </div>
 
     )
+    function deleteProject(e){
+
+      console.log(e.target.value)
+
+    }
 }
 export default Tableproject

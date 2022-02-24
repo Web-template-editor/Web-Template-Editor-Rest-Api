@@ -46,7 +46,7 @@ setData(response.data)
 
       console.log(e.target.value)
       
-       axios.delete('http://localhost:8080/members/member/'+e.target.value)
+       axios.delete('http://localhost:8080/members/memberbyid/'+e.target.value)
       .then((response) =>{
         console.log("deleted")
         

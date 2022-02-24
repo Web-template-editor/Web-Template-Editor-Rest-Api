@@ -8,22 +8,29 @@ import { Button } from "react-bootstrap";
 
 function UpdateProjectForm(props) {
 
-    const[data,setData]=useState([])
-
-    useEffect(()=>{axios.get('http://localhost:8080/projects/project/'+props.match.params.id
-    ).then((response)=>{
-
-        console.log(response.data)
-        setData(response.data)
-
-        // setProject(response.data[0].project)
-
-      })},[])
-const[project_id,setProjectId]=useState('')
+    const[project_id,setProjectId]=useState('')
 const[project_name,setProjectName]=useState('')
 const[external_guide,setProjectExternalGuide]=useState('')
 const[internal_guide,setProjectInternalGuide]=useState('')
 const[project_description,setProjectDescription]=useState('')
+
+    useEffect(()=>{axios.get('http://localhost:8080/projects/project/'+props.match.params.id
+    ).then((response)=>{
+
+        setProjectId(response.data.projectid)
+        setProjectName(response.data.projectName)
+        setProjectExternalGuide(response.data.externalGuide)
+        setProjectInternalGuide(response.data.internalGuide)
+        setProjectDescription(response.data.projectDescription)
+  
+        
+
+
+      })},[])
+      
+       
+  
+
 
 
     return (
@@ -36,7 +43,7 @@ const[project_description,setProjectDescription]=useState('')
                         PROJECT ID
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control value={data.projectid} onChange={(e)=>setProjectId(e.target.value)} type="text" placeholder="ID" />
+                        <Form.Control value={project_id} onChange={(e)=>setProjectId(e.target.value)} type="text" placeholder="ID" />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2" controlId="formPlaintextName">
@@ -44,7 +51,7 @@ const[project_description,setProjectDescription]=useState('')
                        PROJECT NAME
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control value={data.projectName} onChange={(e)=>setProjectName(e.target.value)} type="text"  placeholder="Name" />
+                        <Form.Control value={project_name} onChange={(e)=>setProjectName(e.target.value)} type="text"  placeholder="Name" />
                     </Col>
                 </Form.Group>
                 
@@ -53,7 +60,7 @@ const[project_description,setProjectDescription]=useState('')
                         External GUIDE
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control value={data.externalGuide} onChange={(e)=>setProjectExternalGuide(e.target.value)} type="text" placeholder="External Guide" />
+                        <Form.Control value={external_guide} onChange={(e)=>setProjectExternalGuide(e.target.value)} type="text" placeholder="External Guide" />
                     </Col>
                 </Form.Group>
                 
@@ -62,7 +69,7 @@ const[project_description,setProjectDescription]=useState('')
                         Internal GUIDE
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control value={data.internalGuide} onChange={(e)=>setProjectInternalGuide(e.target.value)} type="text" placeholder="Internal Guide" />
+                        <Form.Control value={internal_guide} onChange={(e)=>setProjectInternalGuide(e.target.value)} type="text" placeholder="Internal Guide" />
                     </Col>
                 </Form.Group>
 
@@ -71,7 +78,7 @@ const[project_description,setProjectDescription]=useState('')
                         Project Description
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control value={data.projectDescription}  onChange={(e)=>setProjectDescription(e.target.value)} as='textarea' rows={10} placeholder='Describe about your project' type="text"  />
+                        <Form.Control value={project_description}  onChange={(e)=>setProjectDescription(e.target.value)} as='textarea' rows={10} placeholder='Describe about your project' type="text"  />
                     </Col>
                 </Form.Group>
                 
@@ -83,7 +90,7 @@ const[project_description,setProjectDescription]=useState('')
 
                     <Col sm="10">
                     
-                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}} href='/Projectlist'  variant="outline-primary">ADD</Button><br/>
+                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}    variant="outline-primary">ADD</Button><br/>
                     </Col>
                 </Form.Group>
 
@@ -91,16 +98,18 @@ const[project_description,setProjectDescription]=useState('')
         </div>
     )
     function submitData(){
-        let employee =  {projectid: project_id,
+        let project =  {projectid: project_id,
         projectName: project_name,
         projectDescription: project_description,
         internalGuide: internal_guide,
         externalGuide: external_guide};
+
+        console.log(project.projectid)
     
     
     
         axios
-        .put("http://localhost:8080/projects/project", employee)
+        .put("http://localhost:8080/projects/project/"+project.projectid, project)
         .then((response) => {
         });
 }

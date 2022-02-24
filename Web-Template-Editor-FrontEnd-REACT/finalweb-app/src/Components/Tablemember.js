@@ -29,7 +29,8 @@ setData(response.data)
       <td>{val.memberId}</td>
       <td>{val.memberName}</td>
       <td><Button as="input" type="reset" value="Reset" /></td>
-      <td><Button variant="outline-danger">Delete</Button></td>
+      <td><Button onClick={deleteMember}  value={val.memberId} variant="outline-danger"  >Delete</Button></td>
+
     </tr>  
                   
                 )
@@ -41,5 +42,16 @@ setData(response.data)
       </div>
       
     )
+    function deleteMember(e){
+
+      console.log(e.target.value)
+      
+       axios.delete('http://localhost:8080/members/member/'+e.target.value)
+      .then((response) =>{
+        console.log("deleted")
+        
+      } );
+
+    }
 }
 export default Tablemember

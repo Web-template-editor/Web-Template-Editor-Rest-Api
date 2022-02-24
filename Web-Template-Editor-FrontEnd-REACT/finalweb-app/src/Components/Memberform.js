@@ -6,7 +6,8 @@ import { Row } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
 function Memberform() {
-    const[member_id,setMemberId]=useState('')
+    
+    const[memberid,setMemberId]=useState()
 const[member_name,setMemberName]=useState('')
 const[member_github,setMemberGit]=useState('')
 const[member_instagram,setMemberInsta]=useState('')
@@ -24,7 +25,7 @@ const[member_project,setMemberProject]=useState('')
                         Member ID
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control value={member_id} onChange={(e)=>setMemberId(e.target.value)} type="text" placeholder="ID" />
+                        <Form.Control value={memberid} onChange={(e)=>setMemberId(e.target.value)} type="text" placeholder="ID" />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-2" controlId="formPlaintextName">
@@ -75,7 +76,9 @@ const[member_project,setMemberProject]=useState('')
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control value={member_project} onChange={(e)=>setMemberProject(e.target.value)} type="text" placeholder="Project ID" />
-                        <Button className="mt-4 mb-4" style={{float: 'right'}}  onClick={submitData} variant="outline-primary"><a href="/Members"> Add Member</a></Button><br/>
+                        {/* <Button className="mt-4 mb-4" style={{float: 'right'}}  onClick={submitData} variant="outline-primary"><a href="/Members"> Add Member</a></Button><br/> */}
+                        <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}   variant="outline-primary" href="/Members">Add Member</Button><br/>
+
 
                     </Col>
                 </Form.Group>
@@ -84,15 +87,17 @@ const[member_project,setMemberProject]=useState('')
         </div>
     )
     function submitData(){
-        let member =  {memberId: member_id,
+        let projecti={projectid:member_project}
+        let member =  {memberId: memberid,
             memberName: member_name,
             memberGithub: member_github,
             memberLinkedIn: member_linkedin,
             memberFacebook: member_facebook,
             memberInstagram: member_instagram,
-            project:member_project
+            project: projecti
         };
     
+        console.log(member)
     
     
         axios

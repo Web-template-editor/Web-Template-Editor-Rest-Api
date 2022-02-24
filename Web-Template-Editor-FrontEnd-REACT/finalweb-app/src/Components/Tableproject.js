@@ -37,7 +37,7 @@ setData(response.data)
       <td>{val.projectName}</td>
       <td><Button  type="reset" value={val.projectid} href={'/update/'+val.projectid} >Edit</Button></td>
       <td><Button onClick={deleteProject}  value={val.projectid} variant="outline-danger"  >Delete</Button></td>
-              
+      
                     </tr>
                 )
             })}
@@ -55,8 +55,10 @@ setData(response.data)
        axios.delete('http://localhost:8080/projects/project/'+e.target.value)
       .then((response) =>{
         console.log("deleted")
+        
       } );
 
     }
+    
 }
 export default Tableproject

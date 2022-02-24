@@ -25,14 +25,14 @@ const Readmore = (props) => {
       <h4>
       <Card style={{ width: '18rem' }}>
   {/* <Card.Img variant="top" src="https://healthitanalytics.com/images/site/features/_normal/ThinkstockPhotos-637917212.jpg" /> */}
-  <Card.Body>
-    <Card.Title className="text-center ">{props.projectname}</Card.Title>
+  <Card.Body >
+    <Card.Title className=" text-center ">{props.projectname}</Card.Title>
     <Card.Text>
     <ReadMore >
 {props.projectdescription}
         </ReadMore>
     </Card.Text>
-    <Button  variant="info"><a href={"/Project/"+props.pid}>Go to Project</a></Button>
+    <Button   variant="info"><a href={"/Project/"+props.pid}>Go to Project</a></Button>
   </Card.Body>
 </Card>
         

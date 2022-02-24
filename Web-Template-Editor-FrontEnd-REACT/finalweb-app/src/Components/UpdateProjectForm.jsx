@@ -38,14 +38,14 @@ const[project_description,setProjectDescription]=useState('')
             <br />
             <h3 className="sub-heading text-white">UPDATE</h3>
             <Form className="text-white">
-                <Form.Group as={Row} className=" mb-2" controlId="formPlaintextId">
+                {/* <Form.Group as={Row} className=" mb-2" controlId="formPlaintextId">
                     <Form.Label column sm="2">
                         PROJECT ID
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control value={project_id} onChange={(e)=>setProjectId(e.target.value)} type="text" placeholder="ID" />
                     </Col>
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group as={Row} className="mb-2" controlId="formPlaintextName">
                     <Form.Label column sm="2">
                        PROJECT NAME
@@ -79,20 +79,12 @@ const[project_description,setProjectDescription]=useState('')
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control value={project_description}  onChange={(e)=>setProjectDescription(e.target.value)} as='textarea' rows={10} placeholder='Describe about your project' type="text"  />
+                        <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}    variant="outline-primary">Update</Button><br/>
+
                     </Col>
                 </Form.Group>
                 
-                <Form.Group as={Row} className="mb-2" controlId="formPlaintextAddMembers">
-                    {/* <Form.Label column sm="2">
-                      Members
-                    </Form.Label> */}
-                     {/* <Form.Control type="text" placeholder="number" /> */}
 
-                    <Col sm="10">
-                    
-                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}    variant="outline-primary">ADD</Button><br/>
-                    </Col>
-                </Form.Group>
 
             </Form>
         </div>

@@ -3,6 +3,7 @@ import Readmore from "./Readmore";
 import { Card } from "react-bootstrap";
 import Home from "./Home";
 import axios from "axios";
+import Typing_effect from "./Typing_effect";
 
 
 function Welcome(){
@@ -31,7 +32,8 @@ setData(response.data)
     return(
         <div className="container">
                     <Home/>
-        <h2 style={styleheading}>WELCOME</h2>
+                    <Typing_effect/>
+       
         <h1 style={styleWeb}>TKM COLLEGE OF ENGINEERING</h1>
         
         <Card className="text-white">

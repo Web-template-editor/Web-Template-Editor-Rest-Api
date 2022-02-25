@@ -102,3 +102,16 @@ h2{
 b{
     color: aliceblue;
 }
+.Type{
+    font-family: sans-serif;
+  font-weight:800;
+  font-size:90px;
+  text-align: center;
+  display:flex;
+  justify-content:center;
+  
+  min-height:35vh;
+  color: aliceblue;
+  margin-top: 15vh;
+  
+}

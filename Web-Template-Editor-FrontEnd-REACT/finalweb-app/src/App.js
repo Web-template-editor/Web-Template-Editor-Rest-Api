@@ -19,6 +19,7 @@ import Memberform from './Components/Memberform';
 import Projectlist from './Components/Projectslist';
 import Projectform from './Components/Projectform';
 import UpdateProjectForm from './Components/UpdateProjectForm';
+import Typing_effect from './Components/Typing_effect';
 
 
 import './App.css';
@@ -49,6 +50,8 @@ function App(){
           <Route path='/Projectlist'><Projectlist/></Route>
           <Route path='/Projectform'><Projectform/></Route>
           <Route path='/Projects'><Projects/></Route>
+          <Route path='/Typing_effect'><Typing_effect/></Route>
+          
 
           <Route path='/'><Welcome/></Route>
        

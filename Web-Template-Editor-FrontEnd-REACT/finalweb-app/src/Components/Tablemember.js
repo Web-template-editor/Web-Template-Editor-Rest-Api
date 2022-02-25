@@ -49,6 +49,7 @@ setData(response.data)
        axios.delete('http://localhost:8080/members/memberbyid/'+e.target.value)
       .then((response) =>{
         console.log("deleted")
+        window.location.href='/Members'
         
       } );
 

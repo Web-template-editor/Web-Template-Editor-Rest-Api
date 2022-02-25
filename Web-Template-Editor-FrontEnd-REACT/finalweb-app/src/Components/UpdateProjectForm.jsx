@@ -79,7 +79,7 @@ const[project_description,setProjectDescription]=useState('')
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control value={project_description}  onChange={(e)=>setProjectDescription(e.target.value)} as='textarea' rows={10} placeholder='Describe about your project' type="text"  />
-                        <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}    variant="outline-primary">Update</Button><br/>
+                        <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}}   variant="outline-primary">Update</Button><br/>
 
                     </Col>
                 </Form.Group>
@@ -95,8 +95,7 @@ const[project_description,setProjectDescription]=useState('')
         projectDescription: project_description,
         internalGuide: internal_guide,
         externalGuide: external_guide};
-
-        console.log(project.projectid)
+        window.location.href='/Projectlist'
     
     
     

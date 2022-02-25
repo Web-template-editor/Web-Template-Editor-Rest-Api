@@ -54,8 +54,8 @@ setData(response.data)
       
        axios.delete('http://localhost:8080/projects/project/'+e.target.value)
       .then((response) =>{
-        console.log("deleted")
-        
+
+        window.location.href='/Projectlist'
       } );
 
     }

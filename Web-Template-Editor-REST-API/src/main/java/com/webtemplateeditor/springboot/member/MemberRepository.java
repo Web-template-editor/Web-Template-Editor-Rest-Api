@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member, String> {
+public interface MemberRepository extends JpaRepository<Member, Long> {
 	
 	@Query("Select u from Member u where u.project.projectid=:c")
 	Iterable<Member> findByMemberProjectId(@Param("c") String project_id);

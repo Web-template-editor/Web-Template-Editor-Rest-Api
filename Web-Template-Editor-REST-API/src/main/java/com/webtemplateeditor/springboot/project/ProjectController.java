@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.webtemplateeditor.springboot.member.MemberNotFoundException;
+
 
 
 
@@ -65,14 +67,13 @@ public class ProjectController {
 	}
 				
 	@DeleteMapping("project/{projectid}")
-	public Map<String, Boolean> deleteProjectById(@PathVariable(value="projectid") String projectId) throws ProjectNotFoundException{
-		Project project=projectrepository.findById(projectId)
-				.orElseThrow(()->new ProjectNotFoundException("Project Not Found"+projectId));
-		this.projectrepository.delete(project);
-		Map<String, Boolean> response=new HashMap<>();
-		response.put("deleted", Boolean.TRUE);
-		return response;	
-	}
+	  public String deleteProjectById(@PathVariable(value="projectid") String projectId)throws ProjectNotFoundException {
+        return projectrepository.findById(projectId)
+                .map(project -> {
+                	projectrepository.delete(project);
+                    return "Delete Successfully!";
+                }).orElseThrow(() -> new ProjectNotFoundException("Project not found with id " + projectId));
+    }
 	
 	
 	

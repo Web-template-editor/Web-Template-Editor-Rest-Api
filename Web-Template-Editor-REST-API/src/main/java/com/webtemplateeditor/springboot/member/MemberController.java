@@ -48,7 +48,7 @@ public class MemberController {
 
 	//get object by id
 	@GetMapping("member/{member_id}")
-	public ResponseEntity<Member> getAllMemberById(@PathVariable(value="member_id") String memberId) throws MemberNotFoundException{
+	public ResponseEntity<Member> getAllMemberById(@PathVariable(value="member_id") Long memberId) throws MemberNotFoundException{
 			Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
 					return ResponseEntity.ok().body(member);
 	}
@@ -61,7 +61,7 @@ public class MemberController {
 	
 
 	@PutMapping("member/{member_id}")
-	public ResponseEntity<Member> updatememberById(@PathVariable(value="member_id") String memberId,@RequestBody Member memberDetails) throws MemberNotFoundException{
+	public ResponseEntity<Member> updatememberById(@PathVariable(value="member_id") Long memberId,@RequestBody Member memberDetails) throws MemberNotFoundException{
 		Member member=memberrepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException("Member is not found for this id::"+memberId));
 				member.setMemberFacebook(memberDetails.getMemberFacebook());
 				member.setMemberId(memberDetails.getMemberId());
@@ -73,13 +73,12 @@ public class MemberController {
 				return ResponseEntity.ok(this.memberrepository.save(member));
 	}
 	
-	@DeleteMapping("memberbyid/{member_id}")
-	public Map<String, Boolean> deleteMmeberById(@PathVariable(value="member_id") String memberId) throws MemberNotFoundException{
-		Member member=memberrepository.findById(memberId)
-				.orElseThrow(()->new MemberNotFoundException("Member Not Found"+memberId));
-		this.memberrepository.delete(member);
-		Map<String, Boolean> response=new HashMap<>();
-		response.put("deleted", Boolean.TRUE);
-		return response;	
-	}
+	@DeleteMapping("member/{member_id}")
+	  public String deleteMmeberById(@PathVariable(value="member_id") Long memberId)throws MemberNotFoundException {
+	        return memberrepository.findById(memberId)
+	                .map(member -> {
+	                	memberrepository.delete(member);
+	                    return "Delete Successfully!";
+	                }).orElseThrow(() -> new MemberNotFoundException("Member not found with id " + memberId));
+	    }
 }

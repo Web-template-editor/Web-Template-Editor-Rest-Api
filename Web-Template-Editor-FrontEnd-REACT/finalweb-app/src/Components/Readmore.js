@@ -24,7 +24,6 @@ const Readmore = (props) => {
     <div className=' content'>
       <h4>
       <Card style={{ width: '18rem' }}>
-  {/* <Card.Img variant="top" src="https://healthitanalytics.com/images/site/features/_normal/ThinkstockPhotos-637917212.jpg" /> */}
   <Card.Body >
     <Card.Title className=" text-center ">{props.projectname}</Card.Title>
     <Card.Text>

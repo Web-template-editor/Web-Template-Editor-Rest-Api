@@ -28,7 +28,9 @@ setData(response.data)
                   <tr key={key}>
       <td>{val.memberId}</td>
       <td>{val.memberName}</td>
-      <td><Button as="input" type="reset" value="Reset" /></td>
+      {/* <td><Button as="input" type="reset" value={val.memberId} href={'/updatemember/'+val.memberId} >Edit</Button></td> */}
+      <td><Button  type="reset" value={val.memberId} href={'/updatemember/'+val.memberId} >Edit</Button></td>
+    
       <td><Button onClick={deleteMember}  value={val.memberId} variant="outline-danger"  >Delete</Button></td>
 
     </tr>  
@@ -46,7 +48,7 @@ setData(response.data)
 
       console.log(e.target.value)
       
-       axios.delete('http://localhost:8080/members/memberbyid/'+e.target.value)
+       axios.delete('http://localhost:8080/members/member/'+e.target.value)
       .then((response) =>{
         console.log("deleted")
         window.location.href='/Members'

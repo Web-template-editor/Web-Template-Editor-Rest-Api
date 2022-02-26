@@ -24,6 +24,7 @@ import Typing_effect from './Components/Typing_effect';
 
 import './App.css';
 import Projects from './Components/Projects';
+import UpdateMemberForm from './Components/UpdateMemberForm';
 
 
 function App(){
@@ -35,7 +36,9 @@ function App(){
       <Header/>
      
         <Switch>
-        <Route path='/update/:id' render={(props) => <UpdateProjectForm {...props} />}/> 
+        <Route path='/updatemember/:id' render={(props) => <UpdateMemberForm {...props} />}/> 
+
+        <Route path='/updateproject/:id' render={(props) => <UpdateProjectForm {...props} />}/> 
 
           <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>

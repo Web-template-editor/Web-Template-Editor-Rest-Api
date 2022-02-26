@@ -95,7 +95,6 @@ const[project_description,setProjectDescription]=useState('')
         projectDescription: project_description,
         internalGuide: internal_guide,
         externalGuide: external_guide};
-        window.location.href='/Projectlist'
     
     
     
@@ -103,6 +102,9 @@ const[project_description,setProjectDescription]=useState('')
         .put("http://localhost:8080/projects/project/"+project.projectid, project)
         .then((response) => {
         });
+        window.location.href='/Projectlist'
+
+
 }
 
 

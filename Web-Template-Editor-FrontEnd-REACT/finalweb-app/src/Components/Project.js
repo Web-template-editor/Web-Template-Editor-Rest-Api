@@ -6,12 +6,18 @@ function Project (props){
 
     const[project,setProject]=useState([])
     const[datas,setDatas]=useState([])
+    useEffect(()=>{axios.get('http://localhost:8080/projects/project/'+props.match.params.id
+    ).then((response)=>{
+
+        setProject(response.data)
+
+
+      })},[])
     useEffect(()=>{axios.get('http://localhost:8080/members/membersbyprojectid/'+props.match.params.id
     ).then((response)=>{
 
         setDatas(response.data)
 
-        setProject(response.data[0].project)
 
       })},[])
 

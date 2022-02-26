@@ -72,7 +72,7 @@ const[project_description,setProjectDescription]=useState('')
 
                     <Col sm="10">
                     
-                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}} href='/Projectlist'  variant="outline-primary">ADD</Button><br/>
+                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}} variant="outline-primary">ADD</Button><br/>
                     </Col>
                 </Form.Group>
 
@@ -92,6 +92,8 @@ const[project_description,setProjectDescription]=useState('')
         .post("http://localhost:8080/projects/project", employee)
         .then((response) => {
         });
+        window.location.href='/Projectlist'
+
 }
 
 

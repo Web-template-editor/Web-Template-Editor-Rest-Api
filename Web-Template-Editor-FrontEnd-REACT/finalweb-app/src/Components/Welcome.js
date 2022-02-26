@@ -51,7 +51,7 @@ setData(response.data)
 
 {data.map((val,key)=>{
                 return(
-                    <div key={key} className="col">
+                    <div key={key} className="col-xl-3 col-lg-4 col-md-6 col-sm-12" >
 
                     <Readmore projectname={val.projectName} projectdescription={val.projectDescription} pid={val.projectid} />
                     </div>

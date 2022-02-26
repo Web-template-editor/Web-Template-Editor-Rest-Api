@@ -61,20 +61,11 @@ const[project_description,setProjectDescription]=useState('')
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control as='textarea' rows={10} placeholder='Describe about your project' type="text"  />
+                        <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}} variant="outline-primary">ADD</Button><br/>
+
                     </Col>
                 </Form.Group>
                 
-                <Form.Group as={Row} className="mb-2" controlId="formPlaintextAddMembers">
-                    {/* <Form.Label column sm="2">
-                      Members
-                    </Form.Label> */}
-                     {/* <Form.Control type="text" placeholder="number" /> */}
-
-                    <Col sm="10">
-                    
-                    <Button onClick={submitData} className="mt-4 mb-4" style={{float: 'right'}} variant="outline-primary">ADD</Button><br/>
-                    </Col>
-                </Form.Group>
 
             </Form>
         </div>

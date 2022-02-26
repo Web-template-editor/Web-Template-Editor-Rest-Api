@@ -37,9 +37,8 @@ function App(){
      
         <Switch>
         <Route path='/updatemember/:id' render={(props) => <UpdateMemberForm {...props} />}/> 
-
         <Route path='/updateproject/:id' render={(props) => <UpdateProjectForm {...props} />}/> 
-
+        <Route path='/Projects'><Projects/></Route>
           <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>
           <Route path='/Media'><Media/></Route>
@@ -52,7 +51,6 @@ function App(){
           <Route path='/Memberform'><Memberform/></Route>
           <Route path='/Projectlist'><Projectlist/></Route>
           <Route path='/Projectform'><Projectform/></Route>
-          <Route path='/Projects'><Projects/></Route>
           <Route path='/Typing_effect'><Typing_effect/></Route>
           
 

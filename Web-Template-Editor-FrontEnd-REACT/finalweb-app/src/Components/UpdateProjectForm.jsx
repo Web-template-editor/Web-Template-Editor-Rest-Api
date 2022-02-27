@@ -11,6 +11,7 @@ function UpdateProjectForm() {
     var params=useParams()
     const[project_id,setProjectId]=useState('')
 const[project_name,setProjectName]=useState('')
+const[project_year,setProjectYear]=useState('')
 const[external_guide,setProjectExternalGuide]=useState('')
 const[internal_guide,setProjectInternalGuide]=useState('')
 const[project_description,setProjectDescription]=useState('')
@@ -20,6 +21,7 @@ const[project_description,setProjectDescription]=useState('')
 
         setProjectId(response.data.projectid)
         setProjectName(response.data.projectName)
+        setProjectYear(response.data.projectYear)
         setProjectExternalGuide(response.data.externalGuide)
         setProjectInternalGuide(response.data.internalGuide)
         setProjectDescription(response.data.projectDescription)
@@ -55,7 +57,14 @@ const[project_description,setProjectDescription]=useState('')
                         <Form.Control value={project_name} onChange={(e)=>setProjectName(e.target.value)} type="text"  placeholder="Name" />
                     </Col>
                 </Form.Group>
-                
+                <Form.Group as={Row} className="mb-2" controlId="formPlaintextYear">
+                    <Form.Label column sm="2">
+                       PROJECT YEAR
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control value={project_year} onChange={(e)=>setProjectYear(e.target.value)} type="text"  placeholder="Year" />
+                    </Col>
+                </Form.Group>
                 <Form.Group as={Row} className="mb-2" controlId="formPlaintextGuide">
                     <Form.Label column sm="2">
                         External GUIDE
@@ -93,6 +102,7 @@ const[project_description,setProjectDescription]=useState('')
     function submitData(){
         let project =  {projectid: project_id,
         projectName: project_name,
+        projectYear: project_year,
         projectDescription: project_description,
         internalGuide: internal_guide,
         externalGuide: external_guide};

@@ -23,8 +23,8 @@ setMember(response.data)
         
         <img src="https://img.icons8.com/nolan/2x/github.png" alt="pic"/><b><a href={member.memberGithub}>Github</a></b><br/>
      
-        <img src="https://img.icons8.com/nolan/2x/apple-mail.png" alt="pic"/><b>snehathankomroy@gmail.com </b><br/>
-        <img src="https://img.icons8.com/nolan/2x/apple-phone.png" alt="pic"/><b>+91-7896547889 </b>
+        <img src="https://img.icons8.com/nolan/2x/apple-mail.png" alt="pic"/><b>{member.memberEmail} </b><br/>
+        <img src="https://img.icons8.com/nolan/2x/apple-phone.png" alt="pic"/><b>+91-{member.memberMobile} </b>
         
         </div>
         

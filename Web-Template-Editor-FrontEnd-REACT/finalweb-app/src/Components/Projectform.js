@@ -13,6 +13,7 @@ const[project_name,setProjectName]=useState('')
 const[external_guide,setProjectExternalGuide]=useState('')
 const[internal_guide,setProjectInternalGuide]=useState('')
 const[project_description,setProjectDescription]=useState('')
+const[project_year,setProjectYear]=useState('')
 
 
     return (
@@ -34,6 +35,14 @@ const[project_description,setProjectDescription]=useState('')
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control value={project_name} onChange={(e)=>setProjectName(e.target.value)} type="text"  placeholder="Name" />
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row} className="mb-2" controlId="formPlaintextYear">
+                    <Form.Label column sm="2">
+                        Year
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control value={project_year} onChange={(e)=>setProjectYear(e.target.value)} type="text" placeholder="Year" />
                     </Col>
                 </Form.Group>
                 
@@ -75,7 +84,10 @@ const[project_description,setProjectDescription]=useState('')
         projectName: project_name,
         projectDescription: project_description,
         internalGuide: internal_guide,
-        externalGuide: external_guide};
+        externalGuide: external_guide,
+        projectYear:project_year
+    
+    };
     
     
     

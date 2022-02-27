@@ -33,8 +33,8 @@ public class Member {
 	@Column(name = "member_email",length = 1000)
 	private String memberEmail;
 	
-	@Column(name = "member_mobile",length = 1000)
-	private int memberMobile;
+	@Column(name = "member_mobile")
+	private String memberMobile;
 	
 	@OneToOne
 	@JoinColumn(name = "projectid" )
@@ -45,7 +45,7 @@ public class Member {
 	}
 
 	public Member(long memberId, String memberName, String memberGithub, String memberLinkedIn, String memberFacebook,
-			String memberEmail, int memberMobile, Project project) {
+			String memberEmail, String memberMobile, Project project) {
 		super();
 		this.memberId = memberId;
 		this.memberName = memberName;
@@ -105,11 +105,11 @@ public class Member {
 		this.memberEmail = memberEmail;
 	}
 
-	public int getMemberMobile() {
+	public String getMemberMobile() {
 		return memberMobile;
 	}
 
-	public void setMemberMobile(int memberMobile) {
+	public void setMemberMobile(String memberMobile) {
 		this.memberMobile = memberMobile;
 	}
 

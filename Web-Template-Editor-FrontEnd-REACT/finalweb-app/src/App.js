@@ -41,7 +41,7 @@ function App(){
         <Route path='/Projects'><Projects/></Route>
           <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
           <Route path='/Details'><Details/></Route>
-          <Route path='/Media'><Media/></Route>
+          <Route path='/Media/:id'><Media/></Route>
           {/* <Route path='/Welcome'><Welcome/></Route> */}
           <Route path='/Tableproject'><Tableproject/></Route>
           <Route path='/Readmore'><Readmore/></Route>

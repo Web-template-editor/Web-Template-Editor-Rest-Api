@@ -19,7 +19,7 @@ function Details(props) {
     
     (props.datas).map((val,index)=>{
         return(
-            <ListGroup.Item key={index} action href="/Media">{val.memberName}</ListGroup.Item>
+            <ListGroup.Item key={index} action href={"/Media/"+val.memberId}>{val.memberName}</ListGroup.Item>
             
         )
     })

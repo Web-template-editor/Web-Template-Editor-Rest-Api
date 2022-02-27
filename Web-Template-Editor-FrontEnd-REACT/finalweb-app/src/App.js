@@ -13,7 +13,6 @@ import Welcome from './Components/Welcome';
 import Tableproject from './Components/Tableproject';
 import Readmore from './Components/Readmore';
 import Selection from './Components/Selection';
-import Tablemember from './Components/Tablemember';
 import Members from './Components/Members';
 import Memberform from './Components/Memberform';
 import Projectlist from './Components/Projectslist';
@@ -36,13 +35,13 @@ function App(){
       <Header/>
      
         <Switch>
-        <Route path='/updatemember/:id' render={(props) => <UpdateMemberForm {...props} />}/> 
-        <Route path='/updateproject/:id' render={(props) => <UpdateProjectForm {...props} />}/> 
+        
+        <Route path='/updatemember/:id' ><UpdateMemberForm/></Route>
+        <Route path='/updateproject/:id' ><UpdateProjectForm/></Route>
         <Route path='/Projects'><Projects/></Route>
-          <Route path='/project/:id' render={(props) => <Project {...props} />}/> 
+          <Route path='/project/:id'><Project/></Route>
           <Route path='/Details'><Details/></Route>
           <Route path='/Media/:id'><Media/></Route>
-          {/* <Route path='/Welcome'><Welcome/></Route> */}
           <Route path='/Tableproject'><Tableproject/></Route>
           <Route path='/Readmore'><Readmore/></Route>
           <Route path='/Selection'><Selection/></Route>

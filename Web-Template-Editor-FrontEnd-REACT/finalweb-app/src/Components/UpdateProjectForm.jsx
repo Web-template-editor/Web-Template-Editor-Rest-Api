@@ -5,16 +5,17 @@ import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-function UpdateProjectForm(props) {
-
+function UpdateProjectForm() {
+    var params=useParams()
     const[project_id,setProjectId]=useState('')
 const[project_name,setProjectName]=useState('')
 const[external_guide,setProjectExternalGuide]=useState('')
 const[internal_guide,setProjectInternalGuide]=useState('')
 const[project_description,setProjectDescription]=useState('')
 
-    useEffect(()=>{axios.get('http://localhost:8080/projects/project/'+props.match.params.id
+    useEffect(()=>{axios.get('http://localhost:8080/projects/project/'+params.id
     ).then((response)=>{
 
         setProjectId(response.data.projectid)

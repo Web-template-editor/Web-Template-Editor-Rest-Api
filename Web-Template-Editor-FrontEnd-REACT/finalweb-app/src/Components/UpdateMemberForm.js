@@ -4,8 +4,10 @@ import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-function UpdateMemberForm(props) {
+function UpdateMemberForm() {
+    var params=useParams()
     
     const[member_id,setMemberId]=useState()
 const[member_name,setMemberName]=useState('')
@@ -14,7 +16,7 @@ const[member_instagram,setMemberInsta]=useState('')
 const[member_facebook,setMemberFb]=useState('')
 const[member_linkedin,setMemberLinkedin]=useState('')
 const[member_project,setMemberProject]=useState('')
-useEffect(()=>{axios.get('http://localhost:8080/members/member/'+props.match.params.id
+useEffect(()=>{axios.get('http://localhost:8080/members/member/'+params.id
 ).then((response)=>{
 
     setMemberId(response.data.memberId)

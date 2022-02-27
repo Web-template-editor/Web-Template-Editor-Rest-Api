@@ -58,6 +58,7 @@ public class ProjectController {
 		project.setProjectDescription(projectDetails.getProjectDescription());
 		project.setProjectid(projectDetails.getProjectid());
 		project.setProjectName(projectDetails.getProjectName());
+		project.setProjectYear(projectDetails.getProjectYear());
 				return ResponseEntity.ok(this.projectrepository.save(project));
 	}
 				

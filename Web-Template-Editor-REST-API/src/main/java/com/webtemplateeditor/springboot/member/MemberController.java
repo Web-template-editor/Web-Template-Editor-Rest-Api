@@ -63,10 +63,11 @@ public class MemberController {
 				member.setMemberFacebook(memberDetails.getMemberFacebook());
 				member.setMemberId(memberDetails.getMemberId());
 				member.setMemberGithub(memberDetails.getMemberGithub());
-				member.setMemberInstagram(memberDetails.getMemberInstagram());
 				member.setMemberLinkedIn(memberDetails.getMemberLinkedIn());
 				member.setMemberName(memberDetails.getMemberName());
 				member.setProject(memberDetails.getProject());
+				member.setMemberEmail(memberDetails.getMemberEmail());
+				member.setMemberMobile(memberDetails.getMemberMobile());
 				return ResponseEntity.ok(this.memberrepository.save(member));
 	}
 	

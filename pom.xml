@@ -14,7 +14,6 @@
 	<name>Web-Template-Editor-REST-API</name>
 	<description>REST API for connecting PostgreSQL Db </description>
 	<properties>
-		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

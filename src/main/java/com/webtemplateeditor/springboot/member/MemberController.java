@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "https://web-template-editor.herokuapp.com")
+@CrossOrigin(origins = "https://web-template-editor.herokuapp.com/")
 @RequestMapping("/members")
 public class MemberController {
 	
